@@ -1,0 +1,5 @@
+name: callable
+on: [workflow_run]
+jobs:
+  say_hi:
+  - run: echo 'hi from callable workflow'
