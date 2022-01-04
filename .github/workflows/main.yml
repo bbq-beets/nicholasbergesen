@@ -10,5 +10,11 @@ jobs:
     needs: [first_job]
     environment: production
     steps:
-      - uses: actions/checkout@latest
-      - run: echo 'deploy me!'
+      - id: step 1
+        run: echo 'deploy me!'
+      - id: step 2
+        run: |
+          sleep 10
+          echo 'I woke up!'
+      - id: step 3
+        run: echo 'marko!'
