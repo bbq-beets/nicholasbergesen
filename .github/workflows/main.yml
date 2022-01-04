@@ -15,5 +15,5 @@ jobs:
       - run: echo 'I woke up!'
       - run: echo 'marko!'
   third_job:
-    uses: bbq-beets/nicholasbergesen/.github/workflows/callable.yml@main
+    uses: bbq-beets/nicholasbergesen/.github/workflows/runme.yml@main
     
