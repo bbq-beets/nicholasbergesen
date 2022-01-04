@@ -1,0 +1,14 @@
+name: main test
+on: workflow_dispatch
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Hello world!'
+  second_job:
+    runs-on: ununtu-latest
+    needs: [first_job]
+    environment: production
+    steps:
+      - uses: actions/checkout@latest
+      - run: echo 'deploy me!'
