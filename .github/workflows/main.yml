@@ -2,9 +2,7 @@ name: main test
 on: [workflow_dispatch]
 jobs:
   first_job:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: bbq-beets/nicholasbergesen/.github/workflows/callme.yml@main
+    uses: bbq-beets/nicholasbergesen/.github/workflows/callme.yml@main
   second_job:
     runs-on: ubuntu-latest
     needs: [first_job]
