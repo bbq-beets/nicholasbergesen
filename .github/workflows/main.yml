@@ -10,11 +10,11 @@ jobs:
     needs: [first_job]
     environment: production
     steps:
-      - id: step 1
+      - id: step1
         run: echo 'deploy me!'
-      - id: step 2
+      - id: step2
         run: |
           sleep 10
           echo 'I woke up!'
-      - id: step 3
+      - id: step3
         run: echo 'marko!'
