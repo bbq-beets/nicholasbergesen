@@ -1,0 +1,7 @@
+name: callable
+on: [workflow_run]
+jobs:
+  say_hi:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo 'hi from callable workflow'
