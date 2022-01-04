@@ -1,5 +1,5 @@
 name: main test
-on: [workflow_run]
+on: [workflow_dispatch]
 jobs:
   first_job:
     runs-on: ubuntu-latest
@@ -14,3 +14,6 @@ jobs:
       - run: sleep 10
       - run: echo 'I woke up!'
       - run: echo 'marko!'
+  third_job:
+    uses: bbq-beets/nicholasbergesen/.github/workflows/callable.yml@main
+    
