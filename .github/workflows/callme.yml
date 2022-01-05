@@ -1,12 +1,9 @@
-
-name: Call me
-
+name: call me
 on:
   workflow_call:
-
 jobs:
   example_job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'hello world'   
+      - run: echo 'hi from cal me'   
  
