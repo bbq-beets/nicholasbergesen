@@ -1,1 +1,8 @@
-
+name: main test
+on: 
+  workflow_dispatch:
+jobs:
+  call_job:
+    uses: bbq-beets/nicholasbergesen/.github/workflows-lab/callme.yml@main
+  run_job:
+    uses: bbq-beets/nicholasbergesen/.github/workflows-lab/runme.yml@main
