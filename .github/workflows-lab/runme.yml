@@ -1,0 +1,11 @@
+name: runme
+on: 
+  workflow_run:
+    workflows: ["main test"]
+    types:
+    - requested
+jobs:
+  say_hi:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo 'hi from run me workflow'
