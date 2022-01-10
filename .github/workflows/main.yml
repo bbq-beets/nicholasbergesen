@@ -4,6 +4,3 @@ on:
 jobs:
   call_job:
     uses: bbq-beets/nicholasbergesen/.github/workflows/callme.yml@main
-  run_job:
-    uses: bbq-beets/nicholasbergesen/.github/workflows/runme.yml@main
-    
