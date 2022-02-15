@@ -1,0 +1,7 @@
+name: call me
+on:
+  workflow_call:
+jobs:
+  example_job:
+    steps:
+      - run: echo 'hi from call me workflow'  
