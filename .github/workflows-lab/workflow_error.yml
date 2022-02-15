@@ -1,4 +1,4 @@
-name: main test
+name: workflow_error
 on: 
   workflow_dispatch:
 jobs:
