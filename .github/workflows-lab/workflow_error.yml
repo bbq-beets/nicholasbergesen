@@ -1,0 +1,6 @@
+name: main test
+on: 
+  workflow_dispatch:
+jobs:
+  call_job:
+    uses: bbq-beets/nicholasbergesen/.github/workflows-lab/main.yml@main
