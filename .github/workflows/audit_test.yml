@@ -1,4 +1,5 @@
 name: Audit Test
 on: workflow_dispatch
 jobs:
-  uses: - anywherepilot-playground/bbq-pilots/.github/workflows/called.yml@main
+  job_name:
+    uses: anywherepilot-playground/bbq-pilots/.github/workflows/called.yml@main
