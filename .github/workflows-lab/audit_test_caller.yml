@@ -1,0 +1,5 @@
+name: 'Test audit'
+on: workflow_dispatch
+jobs:
+  do_a_call:
+    uses: bbq-beets/anywherepilot/.github/workflows-lab/called.yaml@main
