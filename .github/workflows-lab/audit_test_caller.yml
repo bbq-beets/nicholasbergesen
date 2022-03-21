@@ -3,3 +3,7 @@ on: workflow_dispatch
 jobs:
   do_a_call:
     uses: bbq-beets/anywherepilot/.github/workflows-lab/called.yaml@main
+  normal_job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo I'm normal
