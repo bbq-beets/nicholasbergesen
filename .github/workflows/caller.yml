@@ -1,5 +1,0 @@
-name: Caller
-on: workflow_dispatch
-jobs:
-  call:
-    uses: bbq-beets/nicholasbergesen/.github/workflows/called-getoutput.yml@main
