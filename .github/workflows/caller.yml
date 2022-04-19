@@ -1,4 +1,5 @@
 name: Caller
 on: workflow_dispatch
 jobs:
-  uses: - bbq-beets/nicholasbergesen/.github/workflows/called-getoutput.yml
+  call:
+    uses: bbq-beets/nicholasbergesen/.github/workflows/called-getoutput.yml@main
