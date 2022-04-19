@@ -1,0 +1,10 @@
+name: Caller
+on:
+  workflow_dispatch:
+  workflow_call:
+jobs:
+  normal_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo Normal Job!
