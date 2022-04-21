@@ -1,7 +1,11 @@
 name: node_version_example
 
+on: 
+  workflow_dispatch:
+
 jobs:
   node_version_job:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node: [10, 12, 14]
