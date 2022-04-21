@@ -8,4 +8,5 @@ jobs:
     steps:
       - name: Run a one-line script
         run: echo Normal Job!
-      - uses: nicholasbergesen-test/.github/workflows/called.yml@main
+  caller_job:
+    uses: nicholasbergesen-test/.github/workflows/called.yml@main
