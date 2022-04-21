@@ -1,0 +1,14 @@
+name: Matrix-Caller
+on:
+  workflow_dispatch:
+
+strategy:
+  fail-fast: false
+  matrix:
+    env: [dev, stage, prod]
+
+jobs:
+  Reuseable:
+    uses: bbq-beets/nicholasbergesen/.github/workflows/matrix_called.yml@main
+    with:
+      env: ${{ matrix.env }}
