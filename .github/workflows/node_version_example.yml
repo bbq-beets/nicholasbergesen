@@ -5,12 +5,9 @@ on:
 
 jobs:
   node_version_job:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
         node: [10, 12, 14]
-    
-    steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node }}
+    uses: bbq-beets/nicholasbergesen/.github/workflows/called.yml@main
+      with:
+        node-version: ${{ matrix.node }}
