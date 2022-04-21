@@ -1,0 +1,12 @@
+name: node_version_example
+
+jobs:
+  node_version_job:
+    strategy:
+      matrix:
+        node: [10, 12, 14]
+    
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
