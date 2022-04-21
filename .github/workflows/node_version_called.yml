@@ -1,0 +1,15 @@
+name: Matrix-Called
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        description: 'node name'
+        default: '14.x'
+        required: false
+        type: string
+
+jobs:
+  called_job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ inputs.node-version }}
