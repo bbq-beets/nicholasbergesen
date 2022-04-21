@@ -8,6 +8,6 @@ jobs:
     strategy:
       matrix:
         node: [10, 12, 14]
-    uses: bbq-beets/nicholasbergesen/.github/workflows/called.yml@main
-      with:
-        node-version: ${{ matrix.node }}
+    uses: bbq-beets/nicholasbergesen/.github/workflows/node_version_called.yml@main
+    with:
+      node-version: ${{ matrix.node }}
