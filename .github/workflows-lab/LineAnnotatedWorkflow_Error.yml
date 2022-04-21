@@ -1,6 +1,0 @@
-name: LineAnnotated_WorkflowError
-on: 
-  workflow_dispatch:
-jobs:
-  call_job:
-    uses: bbq-beets/nicholasbergesen/.github/workflows-lab/callmebroken.yml@main
