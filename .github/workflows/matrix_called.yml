@@ -2,7 +2,7 @@ name: Matrix-Called
 on:
   workflow_call:
     inputs:
-      env:
+      version:
         description: 'Environment name'
         default: '14.x'
         required: false
@@ -12,4 +12,4 @@ jobs:
   called_job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ inputs.env }}
+      - run: echo ${{ inputs.version }}
