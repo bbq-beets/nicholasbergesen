@@ -1,0 +1,7 @@
+name: inherit_Caller
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    uses: ./.github/workflows/inherit_called.yml
+    secrets: inherit
