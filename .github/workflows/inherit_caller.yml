@@ -3,5 +3,4 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    uses: bbq-beets/nicholasbergesen/.github/workflows/inherit_called.yml@main
-    secrets: inherit
+    uses: ./.github/workflows/inherit_called.yml
