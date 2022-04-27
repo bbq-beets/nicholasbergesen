@@ -5,5 +5,5 @@ jobs:
   called:
     runs-on: ubuntu-latest
     steps:
-      run: echo ${{ secrets.REPO_SECRET }}
-      run: echo ${{ secrets.ORG_SECRET }}
+      - run: echo ${{ secrets.REPO_SECRET }}
+      - run: echo ${{ secrets.ORG_SECRET }}
