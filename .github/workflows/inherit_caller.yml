@@ -4,3 +4,4 @@ on:
 jobs:
   build:
     uses: ./.github/workflows/inherit_called.yml
+    secrets: inherit
