@@ -1,7 +1,10 @@
-name: inherit_Caller
+name: inherit_caller
 on:
   workflow_dispatch:
 jobs:
-  build:
+  call_in_repo:
     uses: ./.github/workflows/inherit_called.yml
+    secrets: inherit
+  call_public:
+    uses: nicholasbergesen/dusty/.github/workflows/inherit_called.yml@main
     secrets: inherit
