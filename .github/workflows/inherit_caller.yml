@@ -6,5 +6,5 @@ jobs:
     uses: ./.github/workflows/inherit_called.yml
     secrets: inherit
   call_public:
-    uses: nicholasbergesen/dusty/.github/workflows/inherit_called.yml@main
+    uses: bbq-beets/nicholasbergesen/.github/workflows/inherit_called.yml@main
     secrets: inherit
