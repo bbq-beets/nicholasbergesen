@@ -12,4 +12,4 @@ jobs:
     environment: production
     steps:
       - run: echo ${{ secrets.PROD_SECRET }}
-      - run: echo ${{ secrets.SECRET_RUN }}
+      - run: echo ${{ secrets.SECRET_RUN }} echoing
