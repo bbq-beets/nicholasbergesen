@@ -15,7 +15,6 @@ jobs:
       - name: Create Codespace
         run: |
           gh auth status
-          export GH_TOKEN=${{ github.TOKEN }}
           gh auth login --with-token
           gh auth status
           $codespace = $(gh cs create -r github/github)
