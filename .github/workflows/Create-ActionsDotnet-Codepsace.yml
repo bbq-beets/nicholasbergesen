@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Create Codespace
         run: |
-          gh auth login --with-token $(( github.TOKEN }}
+          gh auth login --with-token ${{ github.TOKEN }}
           $codespace = $(gh cs create -r github/github)
           gh cs ssh -c $codespace
       - name: Start Services
