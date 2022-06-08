@@ -1,0 +1,28 @@
+name: Create Actions Codepsace
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        type: string
+        required: false
+
+jobs:
+  create_codepsace:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Codespace
+        run: |
+          $codespace = gh cs create -r github/github
+          gh cs ssh -c $codespace
+      - name: Start Services
+        run: |
+          service github start
+          start-actions
+      - run: |
+          cd /workspaces/actions/actions-dotnet/src
+          git checkout ${{ inputs.branch }}
+          skyrise
+          bm
+          actions deploy -UseExistingDatabases
+      - run: echo $codespace creation complete
+    
