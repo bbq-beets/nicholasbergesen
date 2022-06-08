@@ -16,7 +16,7 @@ jobs:
         run: |
           gh auth status
           ${{ github.TOKEN }} >> tokenFile.txt
-          gh auth login --with-token < tokenFile.txt
+          gh auth login
           gh auth status
           $codespace = $(gh cs create -r github/github)
           gh cs ssh -c $codespace
