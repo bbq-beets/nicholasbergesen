@@ -15,10 +15,8 @@ jobs:
       - name: Create Codespace
         run: |
           echo gh auth status
-          echo ${{ gh auth status }}
           export GH_TOKEN=${{ github.TOKEN }}
           echo gh auth status
-          echo ${{ gh auth status }}
           $codespace = $(gh cs create -r github/github)
           gh cs ssh -c $codespace
       - name: Start Services
