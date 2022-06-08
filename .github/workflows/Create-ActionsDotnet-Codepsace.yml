@@ -8,11 +8,12 @@ on:
 
 jobs:
   create_codepsace:
+    env:
+        GH_TOKEN: ${{ github.TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - name: Create Codespace
         run: |
-          gh auth login --with-token ${{ github.TOKEN }}
           $codespace = $(gh cs create -r github/github)
           gh cs ssh -c $codespace
       - name: Start Services
