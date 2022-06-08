@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Create Codespace
         run: |
-          $codespace = gh cs create -r github/github
+          $codespace = $(gh cs create -r github/github)
           gh cs ssh -c $codespace
       - name: Start Services
         run: |
