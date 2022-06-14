@@ -11,10 +11,10 @@ jobs:
     - name: Complete URL
       run: curl "https://api.github.com/${{ env.USERS }}/nicholasbergesen"
       
-    - name: incomplete URL
+    - name: Incomplete URL
       run: curl "https://api.github.com/${{ env.NO_USERS }}/nicholasbergesen"
       
-    - name: Complete URL in script
+    - name: Use Curl in javascript
       uses: actions/github-script@v3
       with:
         script: |
