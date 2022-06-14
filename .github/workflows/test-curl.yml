@@ -9,23 +9,17 @@ jobs:
   autoupdate:
     runs-on: ubuntu-latest
     steps:
-      - name: View context attributes
-        uses: actions/github-script@v6
-        with:
-          script: console.log(context)
-      - name: Show values
+      - name: Show github.event
+        run: echo ${{ toJSON(github.event) }}
+        
+      - name: Env variables in workflow context
         run: |
           echo ${{ env.PR_NUMBER }}
           echo ${{ env.PR_URL }}
           echo ${{ env.GITHUB_TOKEN }}
-      - name: Get the pull request details if the event was issue comment and the issue has an associated pull request
-        id: pr-details
-        uses: actions/github-script@v3
+        
+      - name: Show variables in github-script action
         with:
           script: |
-            const url = context.payload.issue.pull_request.url
-            const result = await github.request(url)
-            curl -v -X PUT -H "Accept:application/vnd.github.v3+json" -H "Authorization:token ${{ env.GITHUB_TOKEN }}" "https://api.github.com/repos/bbq-beetss/nicholasbergesen/pulls/${{ env.PR_NUMBER }}/update-branch"
-      - name: Update pull request branch
-        run: |
-          echo "https://api.github.com/repos/crabel-devops/testing_repo/pulls/${{ env.PR_NUMBER }}/update-branch"
+            console.log(github.event.number)
+            echo ${{ env.PR_NUMBER }}
