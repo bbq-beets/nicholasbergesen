@@ -12,6 +12,7 @@ jobs:
       with:
         script: |
           var url = "https://api.github.com/${{ env.ZEN }}/"
+          console.log(url)
           curl url
           
     - name: try CURL inline
