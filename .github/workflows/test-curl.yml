@@ -15,4 +15,4 @@ jobs:
             console.log(myValue)
             
       - name: Show github event
-        run: echo github.event
+        run: echo ${{ github.event }}
