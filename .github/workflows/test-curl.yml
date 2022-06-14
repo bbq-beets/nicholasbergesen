@@ -9,8 +9,13 @@ jobs:
   autoupdate:
     runs-on: ubuntu-latest
     steps:
+      - name: View context attributes
+        uses: actions/github-script@v3
+        with:
+          script: console.log(context)
+          
       - name: Show github.event
-        run: echo ${{ toJSON(github.event) }}
+        run: echo ${{ toJSON(github) }}
         
       - name: Env variables in workflow context
         run: |
@@ -18,9 +23,4 @@ jobs:
           echo ${{ env.PR_URL }}
           echo ${{ env.GITHUB_TOKEN }}
         
-      - name: Show variables in github-script action
-        uses: actions/github-script@v3
-        with:
-          script: |
-            console.log(github.event.number)
-            echo ${{ env.PR_NUMBER }}
+      
