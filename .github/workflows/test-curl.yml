@@ -15,7 +15,7 @@ jobs:
           script: console.log(context)
           
       - name: Show workflow github context
-        run: echo ${{ toJSON(github) }}
+        run: ${{ toJSON(github) }}
         
       - name: Env variables in workflow context
         run: |
