@@ -18,5 +18,5 @@ jobs:
       uses: actions/github-script@v3
       with:
         script: |
-          curl https://api.github.com/users/nicholasbergesen
+          curl "https://api.github.com/users/nicholasbergesen"
 
