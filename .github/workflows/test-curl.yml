@@ -19,6 +19,7 @@ jobs:
           echo ${{ env.GITHUB_TOKEN }}
         
       - name: Show variables in github-script action
+        uses: actions/github-script@v3
         with:
           script: |
             console.log(github.event.number)
