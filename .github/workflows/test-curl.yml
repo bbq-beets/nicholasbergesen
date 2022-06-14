@@ -14,13 +14,5 @@ jobs:
             var myValue = "I'd like to say ${{ env.HELLO }} from the env variable"
             console.log(myValue)
             
-      - name: Javascript string syntax
-        uses: actions/github-script@v3
-        env:
-          SCRIPT_HELLO: ${{ env.HELLO }}
-        with:
-          script: |
-            var myValueScript = `I'd like to say ${process.SCRIPT_HELLO} from the env variable`
-            var myValue = `I'd like to say ${process.HELLO} from the env variable`
-            console.log(myValue)
-            console.log(myValueScript)
+      - name: Show github event
+        run: echo ${{ toJSON(github.event) }}
