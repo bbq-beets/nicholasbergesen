@@ -11,12 +11,16 @@ jobs:
         uses: actions/github-script@v3
         with:
           script: |
-            var myValue = "I'd like to say ${{ env.Hello }} from the env variable"
+            var myValue = "I'd like to say ${{ env.HELLO }} from the env variable"
             console.log(myValue)
             
       - name: Javascript string syntax
         uses: actions/github-script@v3
+        env:
+          SCRIPT_HELLO: ${{ env.HELLO }}
         with:
           script: |
-            var myValue = `I'd like to say ${env.Hello} from the env variable`
+            var myValueScript = `I'd like to say ${process.SCRIPT_HELLO} from the env variable`
+            var myValue = `I'd like to say ${process.HELLO} from the env variable`
             console.log(myValue)
+            console.log(myValueScript)
