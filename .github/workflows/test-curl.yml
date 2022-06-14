@@ -16,5 +16,4 @@ jobs:
             
       - name: Show github event
         run: |
-          echo ${{ toJSON(github.event) }}
-          echo ${{ github.event }}
+          ${{ toJSON(github.event) }}
