@@ -16,3 +16,8 @@ jobs:
           
       - name: Show workflow env value
         run: echo ${{ env.HELLO }}    
+
+      - name: Show github-script context
+        uses: actions/github-script@v3
+        with:
+          script: console.log(context)
