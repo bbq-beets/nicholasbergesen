@@ -5,14 +5,25 @@ env:
   USERS: users
   NO_USERS: ${{ github.not_real }}
 jobs:
-  success_curl:
+  do_some_curls:
     runs-on: ubuntu-latest
     steps:
-    - name: Curl working
+    - name: Complete URL
       run: curl "https://api.github.com/${{ env.USERS }}/nicholasbergesen"
-  fail_curl:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Curl not working
+      
+    - name: incomplete URL
       run: curl "https://api.github.com/${{ env.NO_USERS }}/nicholasbergesen"
+      
+    - name: Complete URL in script
+      uses: actions/github-script@v3
+      with:
+        script: |
+          curl "https://api.github.com/${{ env.USERS }}/nicholasbergesen"
+      
+    - name: Incomplete URL in script
+      uses: actions/github-script@v3
+      with:
+        script: |
+          curl "https://api.github.com/${{ env.NO_USERS }}/nicholasbergesen"
+   
 
