@@ -7,17 +7,16 @@ jobs:
   run_job:
     runs-on: ubuntu-latest
     steps:
-      - name: View scirpt context
+      - name: Workflow string syntax
         uses: actions/github-script@v3
         with:
           script: |
             var myValue = "I'd like to say ${{ env.Hello }} from the env variable"
             console.log(myValue)
-          
-      - name: Show workflow env value
-        run: echo ${{ env.HELLO }}    
-
-      - name: Show github-script context
+            
+      - name: Javascript string syntax
         uses: actions/github-script@v3
         with:
-          script: console.log(context)
+          script: |
+            var myValue = `I'd like to say ${env.Hello} from the env variable`
+            console.log(myValue)
