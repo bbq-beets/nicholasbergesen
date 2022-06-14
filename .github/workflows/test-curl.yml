@@ -9,12 +9,12 @@ jobs:
   autoupdate:
     runs-on: ubuntu-latest
     steps:
-      - name: View context attributes
+      - name: View scirpt context
         uses: actions/github-script@v3
         with:
           script: console.log(context)
           
-      - name: Show github.event
+      - name: Show workflow github context
         run: echo ${{ toJSON(github) }}
         
       - name: Env variables in workflow context
