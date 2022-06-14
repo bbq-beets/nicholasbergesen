@@ -13,11 +13,10 @@ jobs:
         script: |
           var url = "https://api.github.com/${{ env.ZEN }}/"
           console.log(url)
-          curl url
           
     - name: try CURL inline
       uses: actions/github-script@v3
       with:
         script: |
-          curl "https://api.github.com/${{ env.ZEN }}/"
+          echo "https://api.github.com/${{ env.ZEN }}/"
      
