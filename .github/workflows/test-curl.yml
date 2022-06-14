@@ -18,7 +18,7 @@ jobs:
       uses: actions/github-script@v3
       with:
         script: |
-          curl "https://api.github.com/${{ env.USERS }}/nicholasbergesen"
+          curl `https://api.github.com/${env.USERS}/nicholasbergesen`
       
     - name: Incomplete URL in script
       uses: actions/github-script@v3
