@@ -1,26 +1,20 @@
-name: Update PR
+name: Test Curl
 on:
   workflow_dispatch:
 env:
-  PR_NUMBER: ${{ github.event.number }}
-  PR_URL: ${{ github.event.pull_request.html_url }}
-  GITHUB_TOKEN: ${{ secrets.auto_update }}
+  HELLO: Hello from the env variable
 jobs:
-  autoupdate:
+  run_job:
     runs-on: ubuntu-latest
     steps:
       - name: View scirpt context
         uses: actions/github-script@v3
         with:
-          script: console.log(context)
+          script: |
+            console.log(process.env.HELLO)
+            console.log(env.HELLO)
+            console.log(${{ env.HELLO}})
+            console.log(${{ process.env.HELLO }})
           
-      - name: Show workflow github context
-        run: ${{ toJSON(github) }}
-        
-      - name: Env variables in workflow context
-        run: |
-          echo ${{ env.PR_NUMBER }}
-          echo ${{ env.PR_URL }}
-          echo ${{ env.GITHUB_TOKEN }}
-        
-      
+      - name: Show workflow env value
+        run: echo ${{ env.HELLO }}    
