@@ -12,9 +12,7 @@ jobs:
         with:
           script: |
             console.log(env.HELLO)
-            console.log(env.HELLO)
             console.log(${{ env.HELLO}})
-            console.log(${{ process.env.HELLO }})
           
       - name: Show workflow env value
         run: echo ${{ env.HELLO }}    
