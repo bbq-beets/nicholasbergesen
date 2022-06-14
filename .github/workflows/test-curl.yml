@@ -11,7 +11,7 @@ jobs:
       uses: actions/github-script@v3
       with:
         script: |
-          var url = "https://api.github.com/${{ env.ZEN }}/"
+          var url = `https://api.github.com/${env.ZEN}/`
           console.log(url)
           curl url
           
