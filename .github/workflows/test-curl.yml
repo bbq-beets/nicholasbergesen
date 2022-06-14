@@ -19,4 +19,18 @@ jobs:
       with:
         script: |
           console.log("https://api.github.com/${{ env.ZEN }}/")
+          
+    - name: try CURL
+      uses: actions/github-script@v6
+      with:
+        script: |
+          var url = "https://api.github.com/${{ env.ZEN }}/"
+          console.log(url)
+          
+    - name: try CURL inline
+      uses: actions/github-script@v6
+      with:
+        script: |
+          console.log("https://api.github.com/${{ env.ZEN }}/")
+     
      
