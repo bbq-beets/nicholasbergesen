@@ -9,14 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Complete URL
-      run: curl -v -H "Accept:application/vnd.github.v3+json" "https://api.github.com/${{ env.USERS }}/nicholasbergesen"
+      run: curl -v -X GET -H "Accept:application/vnd.github.v3+json" "https://api.github.com/${{ env.USERS }}/nicholasbergesen"
       
     - name: Incomplete URL
-      run: curl -v -H "Accept:application/vnd.github.v3+json" "https://api.github.com/${{ env.NO_USERS }}/nicholasbergesen"
+      run: curl -v -X GET -H "Accept:application/vnd.github.v3+json" "https://api.github.com/${{ env.NO_USERS }}/nicholasbergesen"
       
     - name: Use Curl in javascript
       uses: actions/github-script@v3
       with:
         script: |
-          curl -v -H "Accept:application/vnd.github.v3+json" "https://api.github.com/users/nicholasbergesen"
+          curl -v -X GET -H "Accept:application/vnd.github.v3+json" "https://api.github.com/users/nicholasbergesen"
 
