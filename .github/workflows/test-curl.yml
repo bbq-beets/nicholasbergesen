@@ -18,5 +18,5 @@ jobs:
       uses: actions/github-script@v3
       with:
         script: |
-          curl "https://api.github.com/users/nicholasbergesen"
+          curl -v -X PUT -H "Accept:application/vnd.github.v3+json" "https://api.github.com/users/nicholasbergesen"
 
