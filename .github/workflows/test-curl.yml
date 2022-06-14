@@ -2,17 +2,17 @@ name: Test Curl
 on:
   workflow_dispatch:
 env:
-  ZEN: zen
-  NO_ZEN: ''
+  USERS: users
+  NO_USERS: ${{ github.not_real }}
 jobs:
   success_curl:
     runs-on: ubuntu-latest
     steps:
     - name: Curl working
-      run: curl "https://api.github.com/${{ env.ZEN }}/"
+      run: curl "https://api.github.com/${{ env.USERS }}/nicholasbergesen"
   fail_curl:
     runs-on: ubuntu-latest
     steps:
     - name: Curl not working
-      run: curl "https://api.github.com/${{ env.NO_ZEN }}/"
+      run: curl "https://api.github.com/${{ env.NO_USERS }}/nicholasbergesen"
 
