@@ -2,7 +2,7 @@ name: Test Curl
 on:
   workflow_dispatch:
 env:
-  HELLO: Hello from the env variable
+  HELLO: Hello 
 jobs:
   run_job:
     runs-on: ubuntu-latest
@@ -11,7 +11,8 @@ jobs:
         uses: actions/github-script@v3
         with:
           script: |
-            console.log(env.HELLO)
+            var myValue = "I'd like to say ${{ env.Hello }} from the env variable"
+            console.log(myValue)
           
       - name: Show workflow env value
         run: echo ${{ env.HELLO }}    
