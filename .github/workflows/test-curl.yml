@@ -7,7 +7,29 @@ jobs:
   run_job:
     runs-on: ubuntu-latest
     steps:
-
+    - name: try CURL
+      uses: actions/github-script@v3
+      with:
+        script: |
+          var zen = ${{ env.ZEN }}
+          var url = `https://api.github.com/${zen}/`
+          console.log(url)
+          curl url
+          
+    - name: try CURL inline
+      uses: actions/github-script@v3
+      with:
+        script: |
+          console.log("https://api.github.com/${{ env.ZEN }}/")
+          
+    - name: try CURL
+      uses: actions/github-script@v6
+      with:
+        script: |
+          var url = "https://api.github.com/${{ env.ZEN }}/"
+          console.log(url)
+          curl url
+          
     - name: try CURL inline
       uses: actions/github-script@v6
       with:
