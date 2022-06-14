@@ -12,7 +12,6 @@ jobs:
         with:
           script: |
             console.log(env.HELLO)
-            console.log(${{ env.HELLO}})
           
       - name: Show workflow env value
         run: echo ${{ env.HELLO }}    
