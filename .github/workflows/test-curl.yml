@@ -1,22 +1,16 @@
 name: Test Curl
 on:
-  workflow_dispatch:     
-env:
-  PR_NUMBER: ${{ github.event.number }}
-  PR_URL: ${{ github.event.pull_request.html_url }}
-  GITHUB_TOKEN: ${{ secrets.auto_update }}
+  workflow_dispatch:
+    
 jobs:
   autoupdate:
+    env:
+      PR_URL: ${{ github.event.pull_request.html_url }}
+      GITHUB_TOKEN: ${{ secrets.auto_update }}
     runs-on: ubuntu-latest
     steps:
-      - name: Get the pull request details if the event was issue comment and the issue has an associated pull request
-        if: github.event_name == 'issue_comment' && github.event.issue.pull_request
-        id: pr-details
-        uses: actions/github-script@v3
-        with:
-          script: |
-            const url = context.payload.issue.pull_request.url
-            const result = await github.request(url)
-            curl -v -X PUT -H "Accept:application/vnd.github.v3+json" -H "Authorization:token ${{ env.GITHUB_TOKEN }}" "https://api.github.com/repos/bbq-beets/nicholasbergesen/pulls/${{ env.PR_NUMBER }}/update-branch"
-      - name: Update pull request branch
-        run: curl -v -X PUT -H "Accept:application/vnd.github.v3+json" -H "Authorization:token ${{ env.GITHUB_TOKEN }}" "https://api.github.com/repos/bbq-beets/nicholasbergesen/pulls/${{ env.PR_NUMBER }}/update-branch"
+    - uses: actions/labeler@v2
+      with:
+        repo-token: ${{ secrets.auto_update }}
+    - name: Update pull request branch
+      run: curl -v -X PUT -H "Accept:application/vnd.github.v3+json" -H "Authorization:token ${{ env.GITHUB_TOKEN }}" "https://github.com/bbq-beets/nicholasbergesen/pull/2"
