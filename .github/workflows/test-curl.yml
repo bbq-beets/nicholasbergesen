@@ -9,6 +9,10 @@ jobs:
   autoupdate:
     runs-on: ubuntu-latest
     steps:
+      - name: View context attributes
+        uses: actions/github-script@v6
+        with:
+          script: console.log(context)
       - name: Show values
         run: |
           echo ${{ env.PR_NUMBER }}
