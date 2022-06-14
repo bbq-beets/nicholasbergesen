@@ -1,18 +1,40 @@
 name: Test Curl
 on:
-  workflow_dispatch:
+  pull_request:
+    types: 
+      - assigned
+      - unassigned
+      - labeled
+      - unlabeled
+      - opened
+      - edited
+      - closed
+      - reopened
+      #- synchronize
+      - converted_to_draft
+      - ready_for_review
+      - locked
+      - unlocked
+      - review_requested
+      - review_request_removed
+      - auto_merge_enabled
+      - auto_merge_disabled
+  issue_comment:
+    types: [created, deleted]
+  pull_request_review_comment:
+    types: [edited, dismissed]
 env:
-  HELLO: Hello 
+  PR_NUMBER: ${{ github.event.number }}
+  PR_NUMBER_TEST: ${{ github.event.pull_request.number }}
+  PR_URL: ${{ github.event.pull_request.html_url }}
+  GITHUB_TOKEN: ${{ secrets.auto_update }}
 jobs:
   run_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Workflow string syntax
-        uses: actions/github-script@v3
-        with:
-          script: |
-            var myValue = "I'd like to say ${{ env.HELLO }} from the env variable"
-            console.log(myValue)
-            
-      - name: Show github event
-        run: ${{ toJSON(github.event) }}
+      - name: show values
+        run: |
+          echo ${{ env.PR_NUMBER }}
+          echo ${{ env.PR_NUMBER_TEST }}
+          echo ${{ env.PR_URL }}
+          echo ${{ env.GITHUB_TOKEN }}
