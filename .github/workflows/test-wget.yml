@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: nslookup 83.169.2.68
-      - run: wget -t 40 https://pngquant.org/pngquant-2.10.1-src.tar.gz
+      - run: wget -d -t 40 https://pngquant.org/pngquant-2.10.1-src.tar.gz
