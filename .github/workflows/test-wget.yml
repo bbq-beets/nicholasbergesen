@@ -4,4 +4,4 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: wget -d -t 40 https://pngquant.org/pngquant-2.10.1-src.tar.gz
+      - run: wget -d -t 40 -w 2 https://pngquant.org/pngquant-2.10.1-src.tar.gz
